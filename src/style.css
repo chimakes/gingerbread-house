@@ -1,0 +1,168 @@
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "VendSans";
+    src: url("../fonts/VendSans-VariableFont_wght.ttf") format("truetype");
+}
+
+html,
+body,
+#root
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+    cursor: url('./assets/circle.svg'), auto;
+    font-family: 'Inter', sans-serif;
+}
+
+canvas {
+    opacity: 0;
+    touch-action: none;
+    animation: fade-in 2s ease-in-out 1s forwards;
+}
+
+.ginger-text {
+    position: absolute;
+    color: #fff;
+    top: 1.5%;
+    left: 13%;
+    width: 270px;
+}
+
+.ginger-text .title {
+    display: flex;
+    flex-direction: column;
+    font-size: 5.5vw;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: 0.04em;
+}
+
+.ginger-text .title span {
+    display: block;
+}
+
+.ginger-text .cozy-sentence {
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.profile-container {
+    position: absolute;
+    color: #fff;
+    bottom: 6.5%;
+    right: 22%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile .name {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.profile .date {
+    font-family: 'VendSans', sans-serif;
+    font-weight: 300;
+}
+
+.x-logo img {
+    vertical-align: middle;
+}
+
+.github-logo {
+    margin-left: 5px;
+}
+
+.github-logo img {
+    transform: scale(1.2);
+}
+
+@media (max-width: 1500px) {
+    .profile-container {
+        right: 18%;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .ginger-text {
+        left: 4%;
+        width: 230px;
+    }
+    .ginger-text .title {
+        font-size: 7vw;
+    }
+    .ginger-text .cozy-sentence {
+        font-size: 18px;
+    }
+    .profile-container {
+        right: 4%;
+    }
+}
+
+@media (max-width: 800px) {
+    .ginger-text {
+        left: 2%;
+        width: 180px;
+    }
+    .ginger-text .title {
+        font-size: 7.3vw;
+    }
+    .profile-container {
+        right: 4%;
+        gap: 8px;
+    }    
+}
+
+@media (max-width: 500px) {
+    .ginger-text {
+        max-width: 270px;
+        width: 100%;
+        padding: 10px;
+    }
+    .ginger-text .title {
+        font-size: 11vw;
+    }
+    .ginger-text .cozy-sentence {
+        margin-top: 8px;
+        font-size: 16px;
+    }
+    .profile-container {
+        bottom: 3%;
+    }
+    .profile .name {
+        font-size: 20px;
+    }
+    .profile .date {
+        font-size: 15px;
+    }
+    .x-logo img {
+        width: 28px;
+        height: 28px;
+    }
+}
