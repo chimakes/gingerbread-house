@@ -38,32 +38,19 @@ function ResponsiveGingerBreadHouse() {
   return <GingerBreadHouse positionY={positionY} scale={scale} />
 }
 
-const isDesktop = window.innerWidth > 1200
-
 export default function Experience()
 {    
-    const {showPerf, enableBloom, enableDOF, focusDistance, focalLength, bokehScale} = useControls({
-        showPerf: false,
-        enableBloom: true,
-        enableDOF: true
-    })
-
     return <>
         <EffectComposer>
-            {enableDOF && isDesktop && (
-                <DepthOfField
-                    focusDistance={1.12}
-                    focalLength={6.05}
-                    bokehScale={2.0}
-                />
-            )}
-            {enableBloom && (
-                <Bloom mipmapBlur luminanceThreshold={0} luminanceSmoothing={0.9} intensity={0.3} />
-            )}
+            <DepthOfField
+                focusDistance={1.12}
+                focalLength={6.05}
+                bokehScale={2.0}
+            />
+            <Bloom mipmapBlur luminanceThreshold={0} luminanceSmoothing={0.9} intensity={0.3} />
+
         </EffectComposer>
         
-        {showPerf && (<Perf position="top-left" /> )}
-
         <color args={ ['#626877'] } attach={"background"} />
         <OrbitControls makeDefault enableZoom={false} enablePan={false} enableRotate={false} />
 
