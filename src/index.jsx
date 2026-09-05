@@ -28,7 +28,7 @@ function RotateCamera() {
     const height = 1.0
 
     useFrame((state, delta) => {
-        const angleOffset = state.pointer.x * 0.1
+        const angleOffset = - state.pointer.x * 0.1
         const angle = initialAngle + angleOffset
 
         const target = [
